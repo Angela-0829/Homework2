@@ -7,10 +7,10 @@ Provide your profitable path, the amountIn, amountOut value for each swap, and y
 
 > Solution  
 path: tokenB->tokenA->tokenD->tokenC->tokenB  
-swap1: tokenB->tokenA, amountIn=5, amountOut=5.655321988655322 
-swap2: tokenA->tokenD, amountIn=5.655321988655322, amountOut=2.4587813170979333 
+swap1: tokenB->tokenA, amountIn=5, amountOut=5.655321988655322  
+swap2: tokenA->tokenD, amountIn=5.655321988655322, amountOut=2.4587813170979333  
 swap3: tokenD->tokenC, amountIn=2.4587813170979333, amountOut=5.0889272933015155  
-swap4: tokenC->tokenB, amountIn=5.0889272933015155, amountOut=20.129888944077443 
+swap4: tokenC->tokenB, amountIn=5.0889272933015155, amountOut=20.129888944077443  
 final reward=20.129888944077443
 
 ## Problem 2
