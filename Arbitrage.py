@@ -46,25 +46,17 @@ def getBalance(path, amountIn):
         amountIn = amountOut
     return amountOut
 
-target = "tokenB"
-path = [target]
-while len(path) <= 5:
-    tokenOut = path[-1]
-    amountMin = 9999
-    for i in range(len(token)):
-        if i == token_id[tokenOut]:
-            continue
-        amount = getAmountIn(token[i], tokenOut, 1)
-        if amount < amountMin:
-            amountMin = amount
-            tokenMin = i
-    path.append(token[tokenMin])
-
-path.reverse()
-path.insert(0, target)
-print("path:", "->".join(token for token in path) + ", tokenB balance=" + str(getBalance(path, 5)))
-
-    
-
+from itertools import permutations
+all_path = list(permutations(["tokenA", "tokenC", "tokenD", "tokenE"], 4))
+max_amount = 0
+for i in range(len(all_path)):
+    current_path = ["tokenB"]
+    current_path.extend(list(all_path[i]))
+    current_path.append("tokenB")
+    current_amount = getBalance(current_path, 5)
+    if current_amount > max_amount:
+        max_amount = current_amount
+        best_path = current_path
+print("path:", "->".join(token for token in best_path) + ", tokenB balance=" + str(getBalance(best_path, 5)))
 
 
