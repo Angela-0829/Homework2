@@ -37,5 +37,5 @@ Investigate the minting function in the UniswapV2Pair contract. When depositing 
 What is a sandwich attack, and how might it impact you when initiating a swap?
 
 > Solution  
-在我要進行swap時，攻擊者知道token的價格會提高，因此搶先在我之前進行swap，先把token價格提高，此時我進行swap，導致我實際獲得的token數量比預期的少，且又會把價格提得更高，攻擊者再賣出原本買入的token即可賺取價差。
+在我要進行swap時，攻擊者知道token的價格會提高，因此搶先在我之前進行swap，先把token價格提高，此時我進行swap，又會把價格提得更高，攻擊者再賣出原本買入的token即可賺取價差，這就是sandwich attack。因為我實際進行swap時的價格比一開始還高，所以會導致我實際獲得的token數量比預期的少。
 
