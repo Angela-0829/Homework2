@@ -47,16 +47,15 @@ def getBalance(path, amountIn):
     return amountOut
 
 from itertools import permutations
-all_path = list(permutations(["tokenA", "tokenC", "tokenD", "tokenE"], 4))
 max_amount = 0
-for i in range(len(all_path)):
-    current_path = ["tokenB"]
-    current_path.extend(list(all_path[i]))
-    current_path.append("tokenB")
-    current_amount = getBalance(current_path, 5)
-    if current_amount > max_amount:
-        max_amount = current_amount
-        best_path = current_path
+for j in range(1, 5):
+    all_path = list(permutations(["tokenA", "tokenC", "tokenD", "tokenE"], j))
+    for i in range(len(all_path)):
+        current_path = ["tokenB"]
+        current_path.extend(list(all_path[i]))
+        current_path.append("tokenB")
+        current_amount = getBalance(current_path, 5)
+        if current_amount > max_amount:
+            max_amount = current_amount
+            best_path = current_path
 print("path:", "->".join(token for token in best_path) + ", tokenB balance=" + str(getBalance(best_path, 5)))
-
-
